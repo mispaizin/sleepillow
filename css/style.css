@@ -1,0 +1,733 @@
+:root {
+    --bg: #EBEBEB;
+    --primary: #FF6600;
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/poppins-medium-webfont.woff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+}
+
+.navbar {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgb(49, 49, 49);
+}
+
+.container {
+    padding: 0 7%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+/* navbar */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 7%;
+}
+
+.navbar .container ul {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .container ul li a {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.navbar .container ul li a:hover {
+    color: var(--primary);
+}
+
+.navbar .container .menu-toggle {
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    display: none;
+    height: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navbar .container span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.navbar .container input {
+    opacity: 0;
+    width: 45px;
+    height: 35px;
+    position: absolute;
+    left: -12px;
+    top: -8px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* animasi */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* akhir animasi */
+/* akhir navbar */
+
+/* home */
+.hero {
+    display: flex;
+    height: 100vh;
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    align-items: center;
+    border-bottom: 1.5px solid var(--primary);
+}
+
+.hero::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 43, 43, 0.2);
+    position: absolute;
+}
+
+.hero .container {
+    max-width: 70%;
+    z-index: 1;
+}
+
+.content h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5rem;
+    color: #FF6600;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.content span {
+    display: block;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.content p {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    margin-top: 0.8rem;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.content ul {
+    display: flex;
+    margin-top: 2rem;
+    gap: 3rem;
+}
+
+
+.content a {
+    display: block;
+    font-size: 1rem;
+    color: white;
+    padding: 1rem 2rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.content .tel {
+    background-color: #FF6600;
+}
+
+.content .wa {
+    background-color: green;
+}
+
+.content .wa:hover {
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+.content .tel:hover {
+    background-color: rgba(255, 102, 0, 0.5);
+}
+
+/* akhir home */
+
+/* tentang kami */
+.about {
+    padding: 8rem 0;
+    background-color: var(--bg);
+}
+
+.about h2,
+.produk h2,
+.mitra h2,
+.galeri h2,
+.contact h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.about span,
+.produk span,
+.mitra span,
+.contact span {
+    color: var(--primary);
+}
+
+.row {
+    display: flex;
+    padding: 3rem 7%;
+    gap: 50px;
+}
+
+.about-img {
+    flex: 1 1 35rem;
+}
+
+.about-img img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.about .title {
+    flex: 1 1 45rem;
+}
+
+.row .title h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.row .title p {
+    font-weight: 100;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+.row .title table tr td {
+    padding: 1rem 1.5rem;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+/* akhir tentang kami */
+
+/* produk */
+.produk {
+    padding: 8rem 0;
+}
+
+.produk .container .row {
+    display: flex;
+    padding: 0;
+    margin-top: 5rem;
+    gap: 5rem;
+    align-items: center;
+}
+
+.produk-img {
+    flex: 1 1 20rem;
+}
+
+.produk img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.produk-title {
+    flex: 1 1 45rem;
+}
+
+.produk .produk-title h4 {
+    font-size: 2.5rem;
+}
+
+.produk .produk-title ul li {
+
+    list-style: square;
+    font-size: 1rem;
+    margin-left: 20rem;
+    margin: 1rem;
+}
+
+.produk .link-produk ul li {
+    list-style: none;
+
+}
+
+.produk .link-produk ul {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.produk .link-produk ul li a {
+    display: block;
+    color: white;
+    padding: 1rem 2rem;
+    letter-spacing: 1px;
+
+}
+
+.produk .link-produk .tokped {
+    background-color: var(--bg);
+    border-radius: 50px;
+    color: green;
+}
+
+.produk .link-produk .shopee {
+    background-color: var(--primary);
+    border-radius: 50px;
+}
+
+.produk .link-produk .whatsapp {
+    background-color: green;
+    border-radius: 50px;
+}
+
+/* akhir produk */
+/* mitra */
+.mitra {
+    background-color: var(--bg);
+    padding: 0.5rem 1rem;
+}
+
+.mitra h2 {
+    margin-top: 2.5rem;
+}
+
+.mitra .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mitra .row .img {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 250px;
+    margin-top: 1rem;
+}
+
+.mitra .row img {
+    width: 50%;
+
+}
+
+/* akhir mitra */
+
+/* galeri */
+.galeri {
+    padding: 8rem 3%;
+}
+
+.galeri ul li {
+    justify-self: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 3px solid var();
+}
+
+
+
+.img-galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+/* Akhir galeri */
+
+/* kontak */
+.contact {
+    padding: 8rem 0;
+}
+
+.kontak-kami {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.kontak span {
+    color: black;
+}
+
+.kontak {
+    flex: 1 1 30rem;
+}
+
+.judul {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 2rem;
+}
+
+.kontak .judul .mail {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.kontak h4 {
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.kontak .alamat {
+    border: 1px solid var(--bg);
+    margin-top: 2rem;
+
+}
+
+.kontak .alamat hr {
+    color: var(--bg);
+}
+
+.kontak .alamat h5 {
+    margin: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-align: center;
+}
+
+.kontak .alamat h6 {
+    font-size: 1.4rem;
+    margin: 1rem;
+}
+
+.kontak .alamat span {
+    display: inline-block;
+    margin: 1rem;
+    line-height: 1.8rem;
+}
+
+.reseler {
+    flex: 1 1 60rem;
+}
+
+.reseler h4 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+input,
+textarea {
+    letter-spacing: 2px;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    outline: none;
+    font-size: 1.2rem;
+    border: 1px solid var(--bg);
+}
+
+.form button {
+    font-size: 1.2rem;
+    padding: 0.5rem 2rem;
+    background-color: var(--primary);
+    border: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+.form button:hover {
+    background-color: rgba(255, 102, 0, 0.8);
+    transition: all 0.5s;
+}
+
+/* Akhir kontak */
+
+/* map */
+.map iframe {
+    border: 30px solid var(--primary);
+    width: 100%;
+    height: 450px;
+}
+
+/* akhir map */
+
+/* footer */
+.container-footer {
+    display: flex;
+    gap: 20px;
+    padding: 2rem;
+    background-color: var(--bg);
+    flex-wrap: wrap;
+
+}
+
+.kotak {
+
+    flex: 1 1 250px;
+
+}
+
+.kotak h5 {
+    font-size: 2rem;
+    font-weight: 10;
+    margin-bottom: 1rem;
+}
+
+.kotak a {
+    display: block;
+    color: black;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.link-kami a:hover,
+.artikel a:hover {
+    color: var(--primary);
+}
+
+.tokped a,
+.shopee a {
+    color: green;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.shopee a {
+    color: var(--primary);
+}
+
+.shopee a:hover,
+.tokped a:hover {
+    color: black;
+}
+
+.sleepillow img {
+    margin-bottom: 0.8rem;
+}
+
+.sleepillow p {
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
+.copy {
+    background-color: var(--bg);
+    padding: 2rem 2rem 3rem;
+}
+
+.copy small {
+    background-color: white;
+    padding: 1rem;
+}
+
+footer .copy a:hover {
+    color: var(--primary);
+}
+
+/* akhir footer */
+
+
+
+
+/* respinsive */
+/* laptope */
+@media (max-width:1266px) {
+    html {
+        font-size: 95%;
+    }
+}
+
+/* tablet */
+@media (max-width:768px) {
+    html {
+        font-size: 85%;
+    }
+
+    /* navbar */
+    .navbar .container .menu-toggle {
+        display: flex;
+    }
+
+    .navbar .container ul {
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 40vh;
+        width: 100%;
+        padding-top: 30px;
+        transform: translateY(-100%);
+        opacity: 1;
+        transition: all 1s;
+    }
+
+    .navbar .container ul li a {
+        font-size: 1rem;
+        background-color: black;
+        width: 80%;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .navbar .container ul li {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+
+    }
+
+    .container ul.slide {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* akhir navbar */
+
+
+    /* home */
+    .hero .container {
+        padding: 0 1.5rem !important;
+        margin: 0 !important;
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .content h1 {
+        font-size: 6rem;
+    }
+
+    .content span {
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+    .content p {
+        line-height: 1.8rem;
+        font-size: 1r.2em;
+    }
+
+    .content ul {
+        display: block;
+    }
+
+    .content a {
+        margin-top: 1rem;
+    }
+
+    /* akhir home */
+
+    /* tentang kami */
+    .row {
+        flex-wrap: wrap;
+    }
+
+    /* akhir tentang kami */
+    .produk .container .row {
+        margin-top: 5rem;
+    }
+
+    .produk .link-produk ul {
+        flex-wrap: wrap;
+    }
+
+    .produk .link-produk ul li {
+        margin: 0;
+        margin-right: 1rem;
+    }
+
+    .produk .link-produk ul li a {
+        margin-top: 10px;
+    }
+
+    .bantal-dada {
+        order: -1;
+    }
+
+    .mitra .row {
+        flex-wrap: nowrap;
+    }
+
+    .mitra .row img {
+        width: 100%;
+    }
+
+    /* kontak */
+    .kontak-kami {
+        flex-wrap: wrap;
+    }
+}
+
+/* Phone */
+@media (max-width:550px) {
+    html {
+        font-size: 75%;
+    }
+}
